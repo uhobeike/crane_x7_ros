@@ -29,14 +29,14 @@ def main():
     arm_initial_pose = arm.get_current_pose().pose
     print("Arm initial pose:")
     print(arm_initial_pose)
-'''
+    '''
     # 何かを掴んでいた時のためにハンドを開く
     gripper.set_joint_value_target([0.9, 0.9])
     gripper.go()
-'''
+    '''
     # SRDFに定義されている"home"の姿勢にする
-    arm.set_named_target("home")
-    arm.go()
+    #arm.set_named_target("home")
+    #arm.go()
     '''
     gripper.set_joint_value_target([0.7, 0.7])
     gripper.go()
@@ -53,7 +53,7 @@ def main():
     target_pose.orientation.w = 0.999999803118
     arm.set_pose_target(target_pose)  # 目標ポーズ設定
     arm.go()  # 実行
-'''
+    '''
     # ハンドを開く
     gripper.set_joint_value_target([0.7, 0.7])
     gripper.go()
@@ -130,7 +130,7 @@ def main():
     target_pose.orientation.w = q[3]
     arm.set_pose_target(target_pose)  # 目標ポーズ設定
     arm.go()  # 実行
-'''
+    '''
     # SRDFに定義されている"home"の姿勢にする
     arm.set_named_target("home")
     arm.go()

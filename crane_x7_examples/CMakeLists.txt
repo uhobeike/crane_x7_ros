@@ -3,11 +3,15 @@ project(crane_x7_examples)
 
 find_package(catkin REQUIRED COMPONENTS
   rospy
+  roscpp
   std_msgs
+  sensor_msgs
   geometry_msgs
   message_generation
+  cv_bridge
+  image_transport
 )
-
+find_package(OpenCV REQUIRED)
 add_service_files(FILES ObstacleAvoidance.srv)
 generate_messages(DEPENDENCIES std_msgs geometry_msgs)
 
@@ -23,24 +27,28 @@ generate_messages(DEPENDENCIES std_msgs geometry_msgs)
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES crane_x7_examples
+ LIBRARIES ${PROJECT_NAME}
+ CATKIN_DEPENDS roscpp
  CATKIN_DEPENDS message_runtime
 #  DEPENDS system_lib
+ DEPENDS
 )
 
 ###########
 ## Build ##
 ###########
 
-include_directories(
-# include
-  ${catkin_INCLUDE_DIRS}
-)
+include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLDUE_DIRS})
 
 
 #############
 ## Install ##
 #############
 
+add_executable(cam   scripts/camera.cpp)
+target_link_libraries(cam ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+##add_executable(cam   scripts/camera_sub.cpp)
+##target_link_libraries(cam2 ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 install(PROGRAMS
   scripts/crane_x7_pick_and_place_demo.py
   scripts/gripper_action_example.py
