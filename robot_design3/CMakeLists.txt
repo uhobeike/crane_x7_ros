@@ -1,13 +1,13 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(crane_x7_examples)
+project(robot_design3)
 
 find_package(catkin REQUIRED COMPONENTS
   rospy
   roscpp
   std_msgs
-  sensor_msgs
   geometry_msgs
   message_generation
+  sensor_msgs
   cv_bridge
   image_transport
 )
@@ -25,13 +25,11 @@ generate_messages(DEPENDENCIES std_msgs geometry_msgs)
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES crane_x7_examples
- LIBRARIES ${PROJECT_NAME}
- CATKIN_DEPENDS roscpp
- CATKIN_DEPENDS message_runtime
-#  DEPENDS system_lib
- DEPENDS
+  LIBRARIES ${PROJECT_NAME}
+  CN_DEPENDS message_runtime
+  INCLUDE_DIRS
+  CATKIN_DEPENDS roscpp
+  DEPENDS
 )
 
 ###########
@@ -40,18 +38,15 @@ catkin_package(
 
 include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLDUE_DIRS})
 
-
 #############
 ## Install ##
 #############
 
-add_executable(cam   scripts/camera.cpp)
+add_executable(cam scripts/model_see.cpp)
 target_link_libraries(cam ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
-##add_executable(cam   scripts/camera_sub.cpp)
-##target_link_libraries(cam2 ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
+
 install(PROGRAMS
   scripts/crane_x7_pick_and_place_demo.py
-  scripts/realsense_camera.py
   scripts/gripper_action_example.py
   scripts/pose_groupstate_example.py
   DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
