@@ -34,30 +34,24 @@ CRANE-X7のためのパッケージ、 `crane_x7`&`realsensD435i` を使って�
 ## システムの起動方法
 
 CRANE-X7の制御信号ケーブルを制御用パソコンへ接続します。
-Terminalを開き、`crane_x7_bringup`の`demo.launch`を起動します。
-このlaunchファイルには次のオプションが用意されています。
-
-- fake_execution (default: true)
+Terminalを開き、`crane_x7_moveit_config`の`demo.launch`を起動します。
 
 
-### 実機を使う場合
+### 実機
 
 実機で動作を確認する場合、
 制御信号ケーブルを接続した状態で次のコマンドを実行します。
 
 ```sh
-roslaunch crane_x7_bringup demo.launch fake_execution:=false
+roslaunch crane_x7_moveit_config demo.launch 
 ```
 
 ケーブルの接続ポート名はデフォルトで`/dev/ttyUSB0`です。
 別のポート名(例: /dev/ttyUSB1)を使う場合は次のコマンドを実行します。
 
 ```sh
-roslaunch crane_x7_bringup demo.launch fake_execution:=false port:=/dev/ttyUSB1
+roslaunch crane_x7_moveit_config demo.launch port:=/dev/ttyUSB1
 ```
-
-
-
 
 ### gripper_action_example.pyの実行
 
