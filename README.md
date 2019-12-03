@@ -34,6 +34,14 @@
 
 CRANE-X7のためのパッケージ、 `crane_x7`&`realsensD435i` を使って画像処理して動作させるためのパッケージです。
 
+| 使用するパッケージ内プログラム名 | 機能説明 |
+----|----
+| opencv.launch  | 赤色の物体を表示する |
+| explore_move.py | cranex_7が物体を探すために探索動作を行う |
+| pick_up_move.py | 物体が検知した場合、物体をつかみに行く |
+
+
+
 ## システムの起動方法
 
 CRANE-X7の制御信号ケーブルを制御用パソコンへ接続します。
@@ -53,8 +61,10 @@ Terminalを開き、`crane_x7_moveit_config`の`demo.launch`を起動します�
 roslaunch robot_design3 opencv.launch 
 ```
 以下のようなwindowが表示されます。
+windowは閉じずにそのままにしてOKです。
 ![RGB_image](https://files.slack.com/files-tmb/TP2T4BG2Z-FQWLARJ81-60821edd5d/image_480.png "RGB_image")
-これで、IMUの影響による画像反転は防がれます。
+> これで、IMUの影響による画像反転は防がれます。
+
 
 制御信号ケーブルを接続した状態で次のコマンドを実行します。
 
