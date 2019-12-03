@@ -23,33 +23,19 @@ ROSのサンプルコード集はこちらです。
 
 ## インストール方法
 
-### ソースからビルドする方法
 
-- [ROS Wiki](http://wiki.ros.org/ja/kinetic/Installation/Ubuntu)を参照しROSをインストールします。
 
 - `git`を使用して本パッケージをダウンロードします。
 
   ```bash
-  cd ~/catkin_ws/src
+  cd ~/catkin_ws/src/crane_x7_ros
   git clone https://github.com/rt-net/crane_x7_ros.git
-  ```
-
-- 依存関係にあるパッケージをインストールします。
-
-  ```bash
-  cd ~/catkin_ws/src
-  
-  # package for crane_x7_gazebo
-  git clone https://github.com/roboticsgroup/roboticsgroup_gazebo_plugins.git
-  
-  rosdep install -r -y --from-paths --ignore-src crane_x7_ros
   ```
 
 - `catkin_make`を使用して本パッケージをビルドします。
 
   ```bash
   cd ~/catkin_ws && catkin_make
-  source ~/catkin_ws/devel/setup.bash
   ```
 
 # crane_x7_examples
