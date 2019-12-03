@@ -89,6 +89,11 @@ rosrun robot_design3 pick_up_move.py
 最後にexplore_move.pyを実行します。
 > 物体検知するための、探索動作を行います。
 
+```sh
+rosrun robot_design3 explore_move.py
+```
+
+
 実際の動作はこちらになります。
 [YoutubeMovie](https://youtu.be/2-XMopff29E)
 
