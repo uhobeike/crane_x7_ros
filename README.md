@@ -29,7 +29,7 @@
 
 # robot_design3
 
-CRANE-X7のためのパッケージ、 `crane_x7`&`realsensD435i` で用いるパッケージです。
+CRANE-X7のためのパッケージ、 `crane_x7`&`realsensD435i` を使って画像処理して動作させるためのパッケージです。
 
 ## システムの起動方法
 
@@ -56,17 +56,7 @@ roslaunch crane_x7_bringup demo.launch fake_execution:=false
 roslaunch crane_x7_bringup demo.launch fake_execution:=false port:=/dev/ttyUSB1
 ```
 
-### Gazeboを使う場合
 
-次のコマンドで起動します。実機との接続やcrane_x7_bringupの実行は必要ありません。
-
-```sh
-roslaunch crane_x7_gazebo crane_x7_with_table.launch
-```
-
-## サンプルの実行方法
-
-`demo.launch`を実行している状態で各サンプルを実行することができます。
 
 
 ### gripper_action_example.pyの実行
