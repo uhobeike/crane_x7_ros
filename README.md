@@ -80,7 +80,7 @@ roslaunch crane_x7_moveit_config demo.launch port:=/dev/ttyUSB1
 ```
 
 次にpick_up_move.pyを実行します。
-> 物体が検知に完了時、動き始めるので実行させてもすぐにcrane_x7動いたりはしません。
+> 物体が検知に完了時、動き始めるので実行させてもすぐにcrane_x7動きません。
 
 ```sh
 rosrun robot_design3 pick_up_move.py
