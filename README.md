@@ -42,7 +42,7 @@ Terminalを開き、`crane_x7_moveit_config`の`demo.launch`を起動します�
 
 ### 実機
 
-実機で動作を確認する場合、まず <font color="Red">***初めにrealsenseD435iを起動***</font> させます。
+実機で動作を確認する場合、まず <font color="Red">初めにrealsenseD435iを起動</font> させます。
 これは、realsenseD435に搭載されているIMUの影響により画面が反転したりしてしまうのでそれを防ぐための対処法です。
 （とりあえず、一回realsenseD435iを動かせばなんとかなります）
 
