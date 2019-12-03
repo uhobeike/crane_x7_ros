@@ -50,7 +50,7 @@ Terminalを開き、`crane_x7_moveit_config`の`demo.launch`を起動します�
 roslaunch robot_design3 opencv.launch 
 ```
 
-https://files.slack.com/files-tmb/TP2T4BG2Z-FQWLARJ81-60821edd5d/image_480.png
+!(https://files.slack.com/files-tmb/TP2T4BG2Z-FQWLARJ81-60821edd5d/image_480.png)
 
 
 制御信号ケーブルを接続した状態で次のコマンドを実行します。
