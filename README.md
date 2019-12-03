@@ -20,7 +20,10 @@
   cd ~/catkin_ws/src/crane_x7_ros
   svn export https://github.com/ShioriSugiyama/crane_x7_ros/trunk/robot_design3
   ```
-
+  ダウンロードして、実行許可がない場合は次のコマンドで許可与えてください。
+   ```bash
+   chmod 777　ファイル名
+    ```
 - `catkin_make`を使用して本パッケージをビルドします。
 
   ```bash
@@ -49,9 +52,9 @@ Terminalを開き、`crane_x7_moveit_config`の`demo.launch`を起動します�
 ```sh
 roslaunch robot_design3 opencv.launch 
 ```
-
+以下のようなwindowが表示されます。
 ![RGB_image](https://files.slack.com/files-tmb/TP2T4BG2Z-FQWLARJ81-60821edd5d/image_480.png "RGB_image")
-
+これで、IMUの影響による画像反転は防がれます。
 
 制御信号ケーブルを接続した状態で次のコマンドを実行します。
 
