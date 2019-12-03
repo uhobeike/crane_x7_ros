@@ -14,11 +14,11 @@
 
 
 
-- `git`を使用して本パッケージをダウンロードします。
+- `Subversion`を使用して本パッケージをダウンロードします。
 
   ```bash
   cd ~/catkin_ws/src/crane_x7_ros
-  git clone https://github.com/rt-net/crane_x7_ros.git
+  svn export https://github.com/ShioriSugiyama/crane_x7_ros/trunk/robot_design3
   ```
 
 - `catkin_make`を使用して本パッケージをビルドします。
@@ -39,7 +39,20 @@ Terminalを開き、`crane_x7_moveit_config`の`demo.launch`を起動します�
 
 ### 実機
 
-実機で動作を確認する場合、
+実機で動作を確認する場合、まず初めにrealsenseD435iを起動させます。
+これは、realsenseD435に搭載されているIMUの影響により画面が反転したりしてしまうのでそれを防ぐための対処法です。
+（とりあえず、一回realsenseD435iを動かせばなんとかなります）
+
+このパッケージにあるプログラムを動かし、反転をし続けないようにします。
+次のコマンドを実行します。
+
+```sh
+roslaunch robot_design3 opencv.launch 
+```
+
+https://files.slack.com/files-tmb/TP2T4BG2Z-FQWLARJ81-60821edd5d/image_480.png
+
+
 制御信号ケーブルを接続した状態で次のコマンドを実行します。
 
 ```sh
