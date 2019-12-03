@@ -1,11 +1,3 @@
-# robot_design3
-
-
-
-CRANE-X7のROSパッケージです。
-
-
-
 ## 動作環境
 
 以下の環境にて動作確認を行っています。
@@ -35,9 +27,9 @@ CRANE-X7のROSパッケージです。
   cd ~/catkin_ws && catkin_make
   ```
 
-# crane_x7_examples
+# robot_design3
 
-CRANE-X7のためのパッケージ、 `crane_x7` で用いるサンプルをまとめたパッケージです。
+CRANE-X7のためのパッケージ、 `crane_x7`&`realsensD435i` で用いるパッケージです。
 
 ## システムの起動方法
 
