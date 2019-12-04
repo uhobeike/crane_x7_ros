@@ -12,6 +12,7 @@ from subprocess import Popen
 from subprocess import PIPE
 flag_demo = 0
 key = 0
+
 def kill_node(nodename): 
 	p2=Popen(['rosnode','list'],stdout=PIPE) 
 	p2.wait() 
@@ -32,6 +33,7 @@ def callback(msg):
     print (bool_c)
     body_up()
     rospy.sleep(10000.0)
+	
 def listener():
     rospy.init_node('listener', anonymous=True)
     rospy.Subscriber("bool", String, callback)
