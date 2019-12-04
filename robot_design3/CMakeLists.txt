@@ -42,7 +42,7 @@ include_directories(include ${catkin_INCLUDE_DIRS} ${OpenCV_INCLDUE_DIRS})
 ## Install ##
 #############
 
-add_executable(cam scripts/model_see.cpp)
+add_executable(cam src/opencv.cpp)
 target_link_libraries(cam ${catkin_LIBRARIES} ${OpenCV_LIBRARIES})
 
 install(PROGRAMS
