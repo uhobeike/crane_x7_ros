@@ -7,6 +7,7 @@
 using namespace::cv;
 std::string msg = "0";
 std::string msg_1 = "0"; 
+
 class depth_estimater{
 public:
     depth_estimater();
@@ -20,7 +21,9 @@ private:
     ros::Subscriber sub_rgb, sub_depth;
     ros::Publisher pub = nh.advertise<std_msgs::String>("bool",100);
 };
+
 cv::Mat img_1;
+
 depth_estimater::depth_estimater(){
     sub_rgb = nh.subscribe<sensor_msgs::Image>("/camera/color/image_raw", 1, &depth_estimater::rgbImageCallback, this);
 }
@@ -43,8 +46,8 @@ void depth_estimater::rgbImageCallback(const sensor_msgs::ImageConstPtr& msg){
     Scalar lower = cv::Scalar(160,50,50);
     Scalar upper = cv::Scalar(180,255,255);
 
-	// BGRからHSVへ変換
-	Mat mask_image, output_image;
+　　// BGRからHSVへ変換
+　　Mat mask_image, output_image;
     int px_1,x,y,x_mem,y_mem;
     int flag = 0;
     // inRangeを用いてフィルタリング
@@ -64,13 +67,17 @@ void depth_estimater::rgbImageCallback(const sensor_msgs::ImageConstPtr& msg){
             if(px_1 > 200) count++;
         }
     }
+	
     std::cout << count << std::endl;
+　　//四角で囲む
     if(flag == 1){
         cv::rectangle(output_image,cv::Point(x_mem-200,y_mem),cv::Point(x_mem-500,y_mem+300),cv::Scalar(0,200,0),3,4);
         //std::cout << x_mem << "," << y_mem << std::endl;
         flag = 0;
     }
+    //画像表示	
     cv::imshow("RGB image", output_image);
+	
     if(count > 3000){
         std::string msg = "1";
         pub.publish(msg);
