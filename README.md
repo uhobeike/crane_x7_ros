@@ -62,7 +62,7 @@ CRANE-X7のためのパッケージ、 `realsensD435i` を使って点群処理�
 PCL_studyについては[こちら](https://github.com/uhobeike/PCL_study)により詳しく説明しています
 | 使用するパッケージ内プログラム名(PCL_study) | 機能説明 |
 ----|----
-| model_plane_cut_test.cpp | ダウンサンプリングや平面除去やクラスタリングなどの処理を行い物体を検出する |*
+| model_plane_cut_test.cpp | ダウンサンプリングや平面除去やクラスタリングなどの処理を行い物体を検出する |
 
 ## システムの起動方法
 
