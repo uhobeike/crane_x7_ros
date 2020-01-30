@@ -44,11 +44,11 @@
  cd ~/catkin_ws/src && git clone https://github.com/uhobeike/PCL_study.git
  ```
  以上のコマンドよりPCL_studyというパッケージをクローンします。
- もう一度
+ もう一度 `catkin_make`を使用して本パッケージをビルドします。
  ```bash
   cd ~/catkin_ws && catkin_make
   ```
-  でコンパイル通ればOKです。
+  無事コンパイル通ればOKです。
 # crane_x7_robot_design3_pcl & PCL_study
 
 CRANE-X7のためのパッケージ、 `realsensD435i` を使って点群処理をし、物体検出した際に`crane_x7`を動作させるためのパッケージです。
