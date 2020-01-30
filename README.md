@@ -60,8 +60,7 @@ CRANE-X7のためのパッケージ、 `realsensD435i` を使って点群処理�
 
 | 使用するパッケージ内プログラム名(PCL_study) | 機能説明 |
 ----|----
-| model_plane_cut_test.cpp | ダウンサンプリングや平面除去やクラスタリング
-などの処理を行い物体を検出する |
+| model_plane_cut_test.cpp | ダウンサンプリングや平面除去やクラスタリングなどの処理を行い物体を検出する |
 
 
 ## システムの起動方法
@@ -110,3 +109,4 @@ rosrun crane_x7_robot_design3_pcl explore_move.py
 実際の動作はこちらになります。
 [YoutubeMovie](https://youtu.be/2-XMopff29E)
 
+(PCLについて色々探ってブログにメモしたやつ)[https://beike.hatenablog.jp/entry/2019/12/24/224303]
