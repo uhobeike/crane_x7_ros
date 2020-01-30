@@ -9,27 +9,28 @@
   - Rviz 1.12.16
   - MoveIt! 1.13.3
   - Gazebo 9.0.0
-
+  - PCL 1.8.1
 ## インストール方法
 
 
 
-- `Subversion`を使用して本パッケージをダウンロードします。
+- `Subversion`を使用して本パッケージをダウンロードします。(PCL関係のパッケージは別にあるので別途ダウンロードを行う必要がありますので以下より
+説明していきます。)
 
   ```bash
   cd ~/catkin_ws/src/crane_x7_ros
-  svn export https://github.com/ShioriSugiyama/crane_x7_ros/trunk/crane_x7_robot_design3
+  svn export https://github.com/ShioriSugiyama/crane_x7_ros/trunk/crane_x7_robot_design3_pcl
   ```
   ダウンロードして、実行許可がない場合は次のコマンドで許可与えてください。
    ```bash
    chmod 777　ファイル名
     ```
--  追加したパッケージをコンパイルしてくれるように~/catkin_ws/src/crane_x7_ros/crane_xにあるpackage.xmlに記入
+-  追加したパッケージをコンパイルしてくれるように~/catkin_ws/src/crane_x7_ros/crane_x7にあるpackage.xmlに記入
 
     以下の写真のように26行目に以下の文を追加
   
     ```
-      <run_depend>crane_x7_robot_design3</run_depend>
+      <run_depend>crane_x7_robot_design3_pcl</run_depend>
     ```
 
 ![cmake](https://github.com/ShioriSugiyama/crane_x7_ros/blob/image/image/a3fe030e89c33e0a895bda411ab39625.png "cmake")
@@ -39,13 +40,12 @@
   cd ~/catkin_ws && catkin_make
   ```
 
-# crane_x7_robot_design3
+# crane_x7_robot_design3_pcl
 
-CRANE-X7のためのパッケージ、 `realsensD435i` を使って画像処理して`crane_x7`を動作させるためのパッケージです。
+CRANE-X7のためのパッケージ、 `realsensD435i` を使って点群処理をし、物体検出した際に`crane_x7`を動作させるためのパッケージです。
 
 | 使用するパッケージ内プログラム名 | 機能説明 |
 ----|----
-| opencv.cpp  | 赤色の物体を表示する |
 | explore_move.py | cranex_7が物体を探すために探索動作を行う |
 | pick_up_move.py | 物体が検知した場合、物体をつかみに行く |
 
@@ -62,19 +62,6 @@ Terminalを開き、`crane_x7_moveit_config`の`demo.launch`を起動します�
 - 実機で動作を確認する場合、まず `初めにrealsenseD435iを起動` させます。
 > realsenseD435に搭載されているIMUの影響により画面が反転したりしてしまうのでそれを防ぐための対処法です。
 >（とりあえず、一回realsenseD435iを動かせばなんとかなります）
-
-このパッケージにあるプログラムを動かし、反転をし続けないようにします。
-次のコマンドを実行します。
-
-```sh
-roslaunch realsense2_camera rs_camera.launch 
-rosrun crane_x7_robot_design3 cam 
-```
-以下のようなwindow[RGB_image]が表示されます。
-window[RGB_image]は閉じずにそのままにしてOKです。
-![RGB_image](https://github.com/ShioriSugiyama/crane_x7_ros/blob/image/image/1794985.jpg "RGB_image")
-> これで、IMUの影響による画像反転は防がれます。
-
 
 - 制御信号ケーブルを接続した状態で次のコマンドを実行します。
 
