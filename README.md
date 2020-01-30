@@ -14,8 +14,8 @@
 
 
 
-- `Subversion`を使用して本パッケージをダウンロードします。(PCL関係のパッケージは別にあるので別途ダウンロードを行う必要がありますので以下より
-説明していきます。)
+- `Subversion`を使用して本パッケージをダウンロードします。
+
 
   ```bash
   cd ~/catkin_ws/src/crane_x7_ros
@@ -25,7 +25,7 @@
    ```bash
    chmod 777　ファイル名
     ```
--  追加したパッケージをコンパイルしてくれるように~/catkin_ws/src/crane_x7_ros/crane_x7にあるpackage.xmlに記入
+- 追加したパッケージをコンパイルしてくれるように~/catkin_ws/src/crane_x7_ros/crane_x7にあるpackage.xmlに記入
 
     以下の写真のように26行目に以下の文を追加
   
@@ -39,7 +39,7 @@
   ```bash
   cd ~/catkin_ws && catkin_make
   ```
-
+- PCL関係のパッケージは別にあるので別途ダウンロードを行う必要がありますので以下より説明していきます。
 # crane_x7_robot_design3_pcl
 
 CRANE-X7のためのパッケージ、 `realsensD435i` を使って点群処理をし、物体検出した際に`crane_x7`を動作させるためのパッケージです。
