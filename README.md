@@ -40,16 +40,28 @@
   cd ~/catkin_ws && catkin_make
   ```
 - PCL関係のパッケージは別にあるので別途ダウンロードを行う必要がありますので以下より説明していきます。
-# crane_x7_robot_design3_pcl
+ ```bash
+ cd ~/catkin_ws/src && git clone https://github.com/uhobeike/PCL_study.git
+ ```
+ 以上のコマンドよりPCL_studyというパッケージをクローンします。
+ もう一度
+ ```bash
+  cd ~/catkin_ws && catkin_make
+  ```
+  でコンパイル通ればOKです。
+# crane_x7_robot_design3_pcl & PCL_study
 
 CRANE-X7のためのパッケージ、 `realsensD435i` を使って点群処理をし、物体検出した際に`crane_x7`を動作させるためのパッケージです。
 
-| 使用するパッケージ内プログラム名 | 機能説明 |
+| 使用するパッケージ内プログラム名(crane_x7_robot_design3_pcl) | 機能説明 |
 ----|----
 | explore_move.py | cranex_7が物体を探すために探索動作を行う |
 | pick_up_move.py | 物体が検知した場合、物体をつかみに行く |
 
-
+| 使用するパッケージ内プログラム名(PCL_study) | 機能説明 |
+----|----
+| explore_move.py | cranex_7が物体を探すために探索動作を行う |
+| pick_up_move.py | 物体が検知した場合、物体をつかみに行く |
 
 ## システムの起動方法
 
