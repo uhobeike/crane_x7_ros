@@ -28,6 +28,10 @@ gripper_controller:
   goal_tolerance: 0.2
   stall_timeout: 0.3
 
+  # for effort_controller
+  gains:
+    crane_x7_gripper_finger_a_joint: { p: 1.0, d: 0.0, i: 0.0 }
+
 dynamixel_port:
   port_name: "/dev/ttyUSB0"
   baud_rate: 3000000
